@@ -602,11 +602,11 @@ namespace base_local_planner{
         generateTrajectory(x, y, theta, vx, vy, vtheta, vx_samp, vy_samp, vtheta_samp,
             acc_x, acc_y, acc_theta, impossible_cost, *comp_traj);
 
-/****************** HACK *****************************************************/
+/****************** HACK ****************************************************
         //Ignore trajectory with all velocities being 0.0
         if (comp_traj->xv_ == 0.0 && comp_traj->yv_ == 0.0 && comp_traj->thetav_ == 0.0)
             continue;
-/****************** END HACK *************************************************/
+***************** END HACK *************************************************/
 
         //if the new trajectory is better... let's take it
         if(comp_traj->cost_ >= 0 && (comp_traj->cost_ < best_traj->cost_ || best_traj->cost_ < 0)){
